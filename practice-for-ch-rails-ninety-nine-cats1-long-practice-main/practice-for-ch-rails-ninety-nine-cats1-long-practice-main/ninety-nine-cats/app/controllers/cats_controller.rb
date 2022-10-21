@@ -6,31 +6,31 @@ class CatsController < ApplicationController
     end
 
     def show 
-        @cat = Cat.find(params[:id])
+        @cat = Cat.find_by(id: params[:id])
         render :show
     end
 
     def create
         @cat = Cat.new(cat_params)
         if @cat.save
-            render :create
+            redirect_to cat_url(@cat)
         else
-            render @cat.errors.full_messages, status: 422
+            render json: @cat.errors.full_messages, status: 422
         end
     end
 
     def update 
         @cat = Cat.find_by(id: params[:id])
         if @cat.update(cat_params)
-            render :update
+            redirect_to cat_url(@cat)
         else 
-            render @cat.errors.full_messages, status: 422
+            render json: @cat.errors.full_messages, status: 422
         end
         
     end
     private
 
     def cat_params 
-        params.require(:cats).permit(:birth_date, :color, :name, :sex)
+        params.require(:cat).permit(:birth_date, :color, :name, :sex)
     end
 end

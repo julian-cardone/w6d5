@@ -41,3 +41,91 @@ Migrating to CreateCats (20221021184312)
   [1m[36mTRANSACTION (39.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(723150122408807205)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-10-21 17:15:43 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  Rendered cats/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2519)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2630)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 5801)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <% @cats.each do |cat| %>
+    <%=render 'cat' {cat: cat} %>
+<% end %>:
+  app/controllers/cats_controller.rb:5:in `index'
+
+Started POST "/__better_errors/f1039e415fd7093d/variables" for ::1 at 2022-10-21 17:15:43 -0400
+  [1m[36mCat Load (2.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/" for ::1 at 2022-10-21 17:16:53 -0400
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  Rendered cats/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1582)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1672)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2373)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <% @cats.each do |cat| %>
+    <%=render 'cat' {cat: cat} %>
+<% end %>:
+  app/controllers/cats_controller.rb:5:in `index'
+
+Started POST "/__better_errors/1eb1fcea46f051bb/variables" for ::1 at 2022-10-21 17:16:53 -0400
+  [1m[36mCat Load (0.8ms)[0m  [1m[34mSELECT "cats".* FROM "cats" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/" for ::1 at 2022-10-21 17:16:55 -0400
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  Rendered cats/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1562)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1644)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1892)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <% @cats.each do |cat| %>
+    <%=render 'cat' {cat: cat} %>
+<% end %>:
+  app/controllers/cats_controller.rb:5:in `index'
+
+Started POST "/__better_errors/4683e76b399fc45b/variables" for ::1 at 2022-10-21 17:16:55 -0400
+  [1m[36mCat Load (1.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/" for ::1 at 2022-10-21 17:18:02 -0400
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:1
+  Rendered cats/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 802)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 7297)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.7ms | Allocations: 8048)
+
+
+Started GET "/" for ::1 at 2022-10-21 17:18:03 -0400
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:1
+  Rendered cats/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 553)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 1696)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 1918)
+
+
+Started GET "/" for ::1 at 2022-10-21 17:18:06 -0400
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:1
+  Rendered cats/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 553)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 1665)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.7ms | Allocations: 1865)
+
+
